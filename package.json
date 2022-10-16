@@ -1,0 +1,52 @@
+{
+  "name": "live-football-scoreboard",
+  "version": "1.0.0",
+  "description": "Live Football scoreboard",
+  "main": "src/index.tsx",
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "NODE_ENV=production webpack",
+    "start": "webpack serve --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SaketSaxena/live-football-scoreboard.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SaketSaxena/live-football-scoreboard/issues"
+  },
+  "homepage": "https://github.com/SaketSaxena/live-football-scoreboard#readme",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@babel/plugin-transform-runtime": "7.18.10",
+    "@babel/preset-env": "^7.19.4",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "@types/react": "^17.0.48",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
+    "html-webpack-plugin": "^5.5.0",
+    "prettier": "^2.7.1",
+    "pretty-quick": "^3.1.3",
+    "sass": "^1.55.0",
+    "sass-loader": "^13.1.0",
+    "style-loader": "^3.3.1",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-loader": "^3.5.4",
+    "tslint-plugin-prettier": "^2.3.0",
+    "typescript": "^4.7.4",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
+  }
+}
