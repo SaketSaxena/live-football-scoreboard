@@ -5,9 +5,9 @@ import StartGame from "../component/StartGame";
 
 describe("StartGame", () => {
   afterEach(cleanup);
-  const updateScoreBoard = jest.fn(() => {});
+  const startNewGame = jest.fn(() => {});
   const renderComponent = () =>
-    render(<StartGame updateScoreBoard={updateScoreBoard} />);
+    render(<StartGame startNewGame={startNewGame} />);
 
   it("should render start game components ", () => {
     const { getAllByRole, getByRole } = renderComponent();
