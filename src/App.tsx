@@ -2,13 +2,14 @@ import React from "react";
 import StartGame from "./component/StartGame";
 import Container from "@mui/material/Container";
 import { Grid } from "@mui/material";
-import { ScoreBoard } from "./types";
+import { ScoreBoardType } from "./types";
 import { useLocalStorage } from "./hook/localStorage.js";
+import ScoreBoard from "./component/ScoreBoard";
 
 const App = () => {
   const [scoreBoard, setScoreBoard] = useLocalStorage("scoreBoard", []);
 
-  const updateScoreBoard = (newScoreBoard: ScoreBoard) => {
+  const updateScoreBoard = (newScoreBoard: ScoreBoardType) => {
     setScoreBoard([...scoreBoard, newScoreBoard]);
   };
 
@@ -20,7 +21,7 @@ const App = () => {
           <StartGame updateScoreBoard={updateScoreBoard} />
         </Grid>
         <Grid item xs={6}>
-          ...
+          <ScoreBoard scoreBoard={scoreBoard} />
         </Grid>
       </Grid>
     </Container>
