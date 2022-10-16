@@ -13,6 +13,12 @@ const App = () => {
     setScoreBoard([...scoreBoard, newScoreBoard]);
   };
 
+  const finishGame = (gameIndex) => {
+    scoreBoard.forEach((item, index) => {
+      if (index === gameIndex) scoreBoard.splice(index, 1);
+    });
+    setScoreBoard([...scoreBoard]);
+  };
   return (
     <Container maxWidth="lg">
       <h1>Welcome to Live Football Scoreboard</h1>
@@ -21,7 +27,7 @@ const App = () => {
           <StartGame updateScoreBoard={updateScoreBoard} />
         </Grid>
         <Grid item xs={6}>
-          <ScoreBoard scoreBoard={scoreBoard} />
+          <ScoreBoard scoreBoard={scoreBoard} finishGame={finishGame} />
         </Grid>
       </Grid>
     </Container>
