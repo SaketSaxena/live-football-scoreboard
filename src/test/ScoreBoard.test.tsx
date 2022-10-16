@@ -7,14 +7,22 @@ import { ScoreBoardType } from "../types";
 describe("ScoreBoard", () => {
   afterEach(cleanup);
   const finishGame = jest.fn(() => {});
+  const setUpdateScore = jest.fn(() => {});
   const scoreBoard: ScoreBoardType[] = [
     {
+      gameNumber: 1,
       homeTeam: { name: "A", score: 23 },
       awayTeam: { name: "B", score: 5 },
     },
   ];
   const renderComponent = () =>
-    render(<ScoreBoard scoreBoard={scoreBoard} finishGame={finishGame} />);
+    render(
+      <ScoreBoard
+        scoreBoard={scoreBoard}
+        finishGame={finishGame}
+        setUpdateScore={setUpdateScore}
+      />
+    );
 
   it("should render score board ", () => {
     const { getAllByRole } = renderComponent();
