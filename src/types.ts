@@ -1,4 +1,4 @@
-export interface ScoreBoard {
+export interface ScoreBoardType {
   homeTeam: TeamScore;
   awayTeam: TeamScore;
 }
