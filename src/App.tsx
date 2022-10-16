@@ -3,13 +3,13 @@ import StartGame from "./component/StartGame";
 import Container from "@mui/material/Container";
 import { Grid } from "@mui/material";
 import { ScoreBoardType } from "./types";
-import { useLocalStorage } from "./hook/localStorage.js";
 import ScoreBoard from "./component/ScoreBoard";
 import UpdateScore from "./component/UpdateScore";
 import { getNextGameNo, sortScoreBoard } from "./util/board";
 
 const App = () => {
-  const [scoreBoard, setScoreBoard] = useLocalStorage("scoreBoard", []);
+  //const [scoreBoard, setScoreBoard] = useLocalStorage("scoreBoard", []);
+  const [scoreBoard, setScoreBoard] = useState<ScoreBoardType[]>([]);
   const [updateScore, setUpdateScore] = useState(undefined);
 
   const startNewGame = (newScoreBoard: ScoreBoardType) => {

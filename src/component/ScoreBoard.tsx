@@ -54,16 +54,18 @@ const ScoreBoard: React.FC<Props> = ({
                 <Button
                   variant="contained"
                   color="success"
-                  onClick={() => finishGame(index)}
-                >
-                  Finish Game
-                </Button>
-                <Button
-                  variant="contained"
-                  color="success"
                   onClick={() => setUpdateScore(score)}
                 >
                   Update Score
+                </Button>
+              </TableCell>
+              <TableCell align="left">
+                <Button
+                  variant="contained"
+                  color="success"
+                  onClick={() => finishGame(index)}
+                >
+                  Finish Game
                 </Button>
               </TableCell>
             </TableRow>

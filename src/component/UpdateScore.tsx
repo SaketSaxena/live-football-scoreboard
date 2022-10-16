@@ -29,6 +29,7 @@ const UpdateScore: React.FC<Props> = ({ updateScore, updateScoreBoard }) => {
           <Grid item xs={6}>
             <TextField
               label={`${updateScore?.homeTeam?.name} Team Score`}
+              type="number"
               variant="outlined"
               required
               defaultValue={updateScore?.homeTeam?.score || ""}
@@ -38,6 +39,7 @@ const UpdateScore: React.FC<Props> = ({ updateScore, updateScoreBoard }) => {
           <Grid item xs={6}>
             <TextField
               label={`${updateScore?.awayTeam?.name} Team Score`}
+              type="number"
               variant="outlined"
               required
               defaultValue={updateScore?.awayTeam?.score || ""}
