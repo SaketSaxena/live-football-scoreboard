@@ -58,6 +58,8 @@ const ScoreBoard: React.FC<Props> = ({
                 >
                   Finish Game
                 </Button>
+              </TableCell>
+              <TableCell align="left">
                 <Button
                   variant="contained"
                   color="success"
