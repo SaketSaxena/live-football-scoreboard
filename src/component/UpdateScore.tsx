@@ -4,53 +4,49 @@ import TextField from "@mui/material/TextField";
 import Container from "@mui/material/Container";
 import { Grid } from "@mui/material";
 import { useForm } from "react-hook-form";
-import { TeamScore } from "../types";
+import { ScoreBoardType } from "../types";
 
 type Props = {
-  startNewGame: () => void;
+  updateScore: ScoreBoardType;
+  updateScoreBoard: () => void;
 };
 
-const StartGame: React.FC<Props> = ({ startNewGame }) => {
+const UpdateScore: React.FC<Props> = ({ updateScore, updateScoreBoard }) => {
   const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = (values) => {
-    const homeTeam: TeamScore = {
-      name: values.homeTeamName,
-      score: 0,
-    };
-
-    const awayTeam: TeamScore = {
-      name: values.awayTeamName,
-      score: 0,
-    };
-
-    startNewGame({ homeTeam, awayTeam });
+    updateScoreBoard(
+      updateScore.gameNumber,
+      values.homeTeamScore,
+      values.awayTeamScore
+    );
     reset();
   };
-
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Container maxWidth="sm">
         <Grid container spacing={2}>
           <Grid item xs={6}>
             <TextField
-              label="Home Team Name"
+              label={`${updateScore?.homeTeam?.name} Team Score`}
               variant="outlined"
               required
-              {...register("homeTeamName")}
+              defaultValue={updateScore?.homeTeam?.score || ""}
+              {...register("homeTeamScore")}
             />
           </Grid>
           <Grid item xs={6}>
             <TextField
-              label="Away Team Name"
+              label={`${updateScore?.awayTeam?.name} Team Score`}
               variant="outlined"
               required
-              {...register("awayTeamName")}
+              defaultValue={updateScore?.awayTeam?.score || ""}
+              {...register("awayTeamScore")}
             />
           </Grid>
           <Grid item xs={12}>
             <Button variant="contained" color="success" type="submit">
-              Start new game
+              Update Score
             </Button>
           </Grid>
         </Grid>
@@ -59,4 +55,4 @@ const StartGame: React.FC<Props> = ({ startNewGame }) => {
   );
 };
 
-export default StartGame;
+export default UpdateScore;

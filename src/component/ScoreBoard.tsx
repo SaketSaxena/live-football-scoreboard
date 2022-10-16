@@ -14,9 +14,15 @@ import Button from "@mui/material/Button";
 type Props = {
   scoreBoard: ScoreBoardType;
   finishGame: () => void;
+  setUpdateScore: () => void;
 };
 
-const ScoreBoard: React.FC<Props> = ({ scoreBoard, finishGame }) => {
+const ScoreBoard: React.FC<Props> = ({
+  scoreBoard,
+  finishGame,
+  setUpdateScore,
+}) => {
+  console.log("board", scoreBoard);
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 50, maxWidth: 550 }} aria-label="simple table">
@@ -25,6 +31,7 @@ const ScoreBoard: React.FC<Props> = ({ scoreBoard, finishGame }) => {
             <TableCell>#</TableCell>
             <TableCell align="left">Home Team</TableCell>
             <TableCell align="left">Away Team</TableCell>
+            <TableCell align="left" />
             <TableCell align="left" />
           </TableRow>
         </TableHead>
@@ -50,6 +57,13 @@ const ScoreBoard: React.FC<Props> = ({ scoreBoard, finishGame }) => {
                   onClick={() => finishGame(index)}
                 >
                   Finish Game
+                </Button>
+                <Button
+                  variant="contained"
+                  color="success"
+                  onClick={() => setUpdateScore(score)}
+                >
+                  Update Score
                 </Button>
               </TableCell>
             </TableRow>
